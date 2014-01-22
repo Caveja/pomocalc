@@ -2,6 +2,10 @@
 
 namespace Pomocalc;
 
+/**
+ * Class Calculator
+ * @package Pomocalc
+ */
 class Calculator
 {
     const POMODORO = 25;
