@@ -21,7 +21,7 @@
         "psr-0": { "": "src/" }
     },
     "require": {
-        "symfony/console": "~2.4"
+        "symfony/console": "~2.3"
     },
     "extra": {
         "branch-alias": {
