@@ -8,8 +8,19 @@ namespace Pomocalc;
  */
 class Calculator
 {
+    /**
+     * Pomodoro's length in minutes
+     */
     const POMODORO = 25;
+
+    /**
+     * Short break in minutes
+     */
     const SHORT_BREAK = 5;
+
+    /**
+     * Long break in minutes
+     */
     const LONG_BREAK = 30;
 
     /**
