@@ -5,6 +5,7 @@ use Pomocalc\Calculator;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class CalculatePomodorosCommand extends Command
@@ -14,13 +15,16 @@ class CalculatePomodorosCommand extends Command
         $this
             ->setName('pomodoro:calculate')
             ->setDescription('Tells you how many pomodoros are available in a given amount of minutes')
-            ->addArgument('minutes', InputArgument::REQUIRED)
+            ->addArgument('minutes', InputArgument::REQUIRED, 'Minutes available')
+            ->addOption('hours', 'H', InputOption::VALUE_NONE, 'If set will use hours instead of minutes')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $minutes = $input->getArgument('minutes');
+        $factor = $input->getOption('hours') ? 60 : 1;
+        $minutes = $input->getArgument('minutes') * $factor;
+
         $calculator = new Calculator();
         $pomodoros = $calculator->getPomodorosForMinutes($minutes);
 
