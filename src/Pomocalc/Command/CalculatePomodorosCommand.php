@@ -13,7 +13,7 @@ class CalculatePomodorosCommand extends Command
     {
         $this
             ->setName('pomodoro:calculate')
-            ->setDescription('Tells you how many pomodoros are available in given amount of minutes')
+            ->setDescription('Tells you how many pomodoros are available in a given amount of minutes')
             ->addArgument('minutes', InputArgument::REQUIRED)
         ;
     }
