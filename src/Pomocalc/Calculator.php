@@ -17,12 +17,19 @@ class Calculator
         $pomodoros = 0;
 
         while ($minutes >= self::POMODORO) {
-            $break = ++$pomodoros % 4 === 0 ? self::LONG_BREAK : self::SHORT_BREAK;
-
-            $minutes -= (self::POMODORO + $break);
-
+            ++$pomodoros;
+            $minutes -= self::POMODORO + $this->getBreakLengthFromPomodoroNumber($pomodoros);
         }
 
         return $pomodoros;
+    }
+
+    /**
+     * @param $pomodoros
+     * @return int
+     */
+    private function getBreakLengthFromPomodoroNumber($pomodoros)
+    {
+        return $pomodoros % 4 === 0 ? self::LONG_BREAK : self::SHORT_BREAK;
     }
 }
