@@ -31,6 +31,21 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase
         $this->check(1, 50);
     }
 
+    public function test55MinutesIsTwoPomodoros()
+    {
+        $this->check(2, 55);
+    }
+
+    public function test145MinutesIsFourPomodoros()
+    {
+        $this->check(4, 145);
+    }
+
+    public function test170MinutesIsFivePomodoros()
+    {
+        $this->check(5, 170);
+    }
+
     /**
      * @param $pomodoros
      * @param $minutes
