@@ -7,5 +7,8 @@
     },
     "autoload": {
         "psr-0": { "": "src/" }
+    },
+    "require": {
+        "symfony/console": "~2.4"
     }
 }
