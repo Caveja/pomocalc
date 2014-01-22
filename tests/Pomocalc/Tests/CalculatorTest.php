@@ -46,6 +46,11 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase
         $this->check(5, 170);
     }
 
+    public function testFloatMinutesReturnsInteger()
+    {
+        $this->check(1, 25.0);
+    }
+
     /**
      * @param $pomodoros
      * @param $minutes
