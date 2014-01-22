@@ -3,8 +3,11 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Pomocalc\Command\CalculatePomodorosCommand;
 use Symfony\Component\Console\Application;
 
 $app = new Application('Pomocalc', '0.1.x-dev');
+
+$app->add(new CalculatePomodorosCommand());
 
 $app->run();
