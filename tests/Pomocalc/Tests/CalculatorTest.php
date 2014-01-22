@@ -6,10 +6,19 @@ use Pomocalc\Calculator;
 
 class CalculatorTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var
+     */
+    private $calculator;
+
+    protected function setUp()
+    {
+        $this->calculator = new Calculator();
+    }
+
     public function test15MinutesIsZeroPomodoros()
     {
-        $calculator = new Calculator();
-
-        $this->assertSame(0, $calculator->getPomodorosForMinutes(15));
+        $this->assertSame(0, $this->calculator->getPomodorosForMinutes(15));
     }
+
 }
